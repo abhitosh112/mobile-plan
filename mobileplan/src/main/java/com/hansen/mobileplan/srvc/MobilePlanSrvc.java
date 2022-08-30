@@ -44,8 +44,15 @@ public class MobilePlanSrvc {
 
 	public boolean delete(Long planid) {
 		//TODO Homework... write the code to delete
-		
+		if(mobilePlanDao.existsById(planid))
+		{
+			mobilePlanDao.deleteById(planid);
+			return true;
+		}
 		
 		return false;
 	}
+		
+		
+		
 }
